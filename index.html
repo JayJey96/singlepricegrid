@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Single Price Grid Component</title>
+  <style>
+    * {
+      margin: 0;
+      box-sizing: border-box;
+      font-family: 'Karla', sans-serif;
+    }
+
+    body {
+      background-color: hsl(204, 43%, 93%);
+      height: 100vh;
+      display: grid;
+      justify-content: center;
+      align-content: center;
+    }
+
+    .wrapper {
+      width: 710px;
+      display: grid;
+      border-radius: .5em;
+      overflow: hidden;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: "top top"
+                           "left right";
+    }
+
+    .top {
+      background-color: white;
+      grid-area: top;
+      padding: 2.5em;
+    }
+
+    .top .title {
+      font-size: 1.65rem;
+      color: hsl(179, 62%, 43%);
+      font-weight: 700;
+      margin-bottom: 1.2em;
+    }
+
+    .top .money-back {
+      font-size: 1.25rem;
+      color: hsl(71, 73%, 54%);
+      font-weight: 700;
+      margin-bottom: .85em;
+    }
+
+    .top .desc {
+      font-size: 1.1rem;
+      color: hsl(218, 22%, 67%);
+      line-height: 1.6;
+    }
+
+    .left {
+      background-color: hsl(179, 62%, 43%);
+      grid-area: left;
+      display: flex;
+      flex-direction: column;
+      padding: 2.5em;
+    }
+
+    .left .title {
+      font-size: 1.25rem;
+      color: white;
+      font-weight: 700;
+      margin-bottom: 1em;
+    }
+
+    .left .price-wrapper {
+      display: flex;
+      gap: .5em;
+      margin-bottom: 1em;
+    }
+
+    .left .price-wrapper .price {
+      font-size: 2.1rem;
+      color: white;
+      font-weight: 700;
+    }
+
+    .left .price-wrapper .time {
+      padding-top: .8em;
+      color: hsl(179, 60%, 65%);
+    }
+
+    .left .desc {
+      color: white;
+      margin-bottom: 2em;
+    }
+
+    .left button {
+      font-size: 1rem;
+      width: 100%;
+      height: 3.5em;
+      border: none;
+      color: white;
+      background-color: hsl(71, 73%, 54%);
+      border-radius: .25em;
+      box-shadow: 0px 5px 10px rgb(0, 0, 0,0.2);
+      font-weight: 700;
+      margin-top: auto;
+    }
+    .right {
+      background-color: hsl(179, 61%, 48%);
+      grid-area: right;
+      padding: 2.5em;
+    }
+    .right .title {
+      font-size: 1.25rem;
+      color: white;
+      font-weight: 700;
+      margin-bottom: 1em;
+    }
+    .right .info {
+      color: hsla(179, 100%, 91%, 0.749);;
+      line-height: 1.45;
+    }
+    @media only screen and (max-width: 750px) {
+      body {
+        margin-top: 2em;
+        height: fit-content;
+        align-content: start;
+        margin-bottom: 2em;
+      }
+      .wrapper {
+        max-width: 383px;
+        grid-template-columns: 383px;
+        grid-template-rows: fit-content fit-content fit-content;
+        grid-template-areas: "top"
+                             "left"
+                             "right";
+      }
+      .right {
+        height:fit-content;
+        border-radius: 0 0 .5em .5em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="top">
+      <div class="title">Join our community</div>
+      <div class="money-back">30-day, hassle-free money back guarantee</div>
+      <div class="desc">Gain access to our full library of tutorials along with expert code reviews. 
+        Perfect for any developers who are serious about honing their skills.</div>
+    </div>
+    <div class="left">
+      <div class="title">Monthly Subscription</div>
+      <div class="price-wrapper">
+        <div class="price">&dollar;29</div>
+        <div class="time">per month</div>
+      </div>
+      <div class="desc">Full access for less than &dollar;1 a day</div>
+      <button>Sign Up</button>
+    </div>
+    <div class="right">
+      <div class="title">Why Us</div>
+      <div class="info">
+        Tutorials by industry experts
+        <br>
+        Peer &amp; expert code review
+        <br>
+        Coding exercises
+        <br>
+        Access to our GitHub repos
+        <br>
+        Community forum
+        <br>
+        Flashcard decks
+        <br>
+        New videos every week
+      </div>
+    </div>
+  </div>
+</body>
+</html>
